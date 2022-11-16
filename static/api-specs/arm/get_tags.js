@@ -25,7 +25,7 @@ const iterate = (obj) => {
 
 }
 
-let rawdata = fs.readFileSync('static/arm-api/swagger-utilization-tracking.json');
+let rawdata = fs.readFileSync('static/api-specs/arm/swagger-agent-management.json');
 let student = JSON.parse(rawdata);
 
 iterate(student)

@@ -27,6 +27,7 @@ module.exports = [
       docItemComponent: "@theme/ApiItem",
     },
   ],
+  
   [
     "@docusaurus/plugin-google-gtag",
     {
@@ -76,6 +77,24 @@ module.exports = [
           },
           template: "api.mustache",
         },
+      },
+    },
+  ],
+  [
+    "docusaurus-plugin-openapi-docs",
+    {
+      id: "arm-api",
+      docsPluginId: "arm",
+      config: {
+        arm_agent_management: {
+          specPath: "static/api-specs/arm/swagger-agent-management.json",
+          outputDir: "products/arm/api/agent-management",
+          sidebarOptions: {
+            groupPathsBy: "tag",
+            categoryLinkSource: "tag",
+          },
+          template: "api.mustache",
+        }
       },
     },
   ],

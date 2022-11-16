@@ -238,7 +238,9 @@
                     "Created",
                     "Updated",
                     "Retracted",
-                    "Error"
+                    "Error",
+                    "Exception",
+                    "Terminated"
                   ],
                   "type": "string"
                 }
@@ -258,7 +260,9 @@
                     "Created",
                     "Updated",
                     "Retracted",
-                    "Error"
+                    "Error",
+                    "Exception",
+                    "Terminated"
                   ],
                   "type": "string"
                 }
@@ -278,7 +282,9 @@
                     "Created",
                     "Updated",
                     "Retracted",
-                    "Error"
+                    "Error",
+                    "Exception",
+                    "Terminated"
                   ],
                   "type": "string"
                 }
@@ -352,17 +358,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Stream"
+                  "$ref": "#/components/schemas/File"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Stream"
+                  "$ref": "#/components/schemas/File"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Stream"
+                  "$ref": "#/components/schemas/File"
                 }
               }
             }
@@ -372,37 +378,26 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "#/components/schemas/ModelStateEntry"
+                  }
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "#/components/schemas/ModelStateEntry"
+                  }
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "#/components/schemas/ModelStateEntry"
+                  }
                 }
               }
             }
@@ -577,22 +572,13 @@
             "description": "Bad Request",
             "content": {
               "text/plain": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "text/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               }
             }
           },
@@ -600,22 +586,13 @@
             "description": "Unauthorized",
             "content": {
               "text/plain": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "text/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               }
             }
           }
@@ -627,7 +604,7 @@
         "tags": [
           "Lookup"
         ],
-        "summary": "Get all the roles for a particular Customer and Erp system.",
+        "summary": "Get all the roles for a particular Customer and Erp system.\r\nThis is an Odata query endpoint and does not validate the data passed in.",
         "parameters": [
           {
             "name": "erpSystemId",
@@ -684,22 +661,13 @@
             "description": "Bad Request",
             "content": {
               "text/plain": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "text/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               }
             }
           },
@@ -707,22 +675,13 @@
             "description": "Unauthorized",
             "content": {
               "text/plain": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "text/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               }
             }
           }
@@ -789,22 +748,13 @@
             "description": "Bad Request",
             "content": {
               "text/plain": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "text/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               }
             }
           },
@@ -812,22 +762,13 @@
             "description": "Unauthorized",
             "content": {
               "text/plain": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "text/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               }
             }
           }
@@ -901,22 +842,13 @@
             "description": "Bad Request",
             "content": {
               "text/plain": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "text/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               }
             }
           },
@@ -924,22 +856,13 @@
             "description": "Unauthorized",
             "content": {
               "text/plain": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "text/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               }
             }
           }
@@ -1022,22 +945,13 @@
             "description": "Bad Request",
             "content": {
               "text/plain": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "text/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               }
             }
           },
@@ -1045,21 +959,63 @@
             "description": "Unauthorized",
             "content": {
               "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/lookup/rulebooks/{rulebookId}/risks/{riskCode}/detail": {
+      "get": {
+        "tags": [
+          "Lookup"
+        ],
+        "summary": "Risk Details for an Abacus-based rulebook and risk code.",
+        "parameters": [
+          {
+            "name": "rulebookId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "riskCode",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": false
+                  "$ref": "#/components/schemas/RiskDetailsLookupModel"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": false
+                  "$ref": "#/components/schemas/RiskDetailsLookupModel"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": false
+                  "$ref": "#/components/schemas/RiskDetailsLookupModel"
                 }
               }
             }
@@ -1339,11 +1295,12 @@
         "tags": [
           "Whatif"
         ],
-        "summary": "what if",
+        "summary": "Downloads the Customer, System, Job specific WhatIf Excel report, based on the supplied parameters.",
         "parameters": [
           {
             "name": "jobId",
             "in": "path",
+            "description": "Represents the job unique identifier used to download the report.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -1353,6 +1310,7 @@
           {
             "name": "customerId",
             "in": "path",
+            "description": "Represents the customer unique identifier used to download the report.",
             "required": true,
             "schema": {
               "type": "string",
@@ -1362,6 +1320,7 @@
           {
             "name": "erpSystemId",
             "in": "path",
+            "description": "Represents the system unique identifier used to download the report.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -1373,65 +1332,14 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
+              "application/vnd.ms-excel": {
                 "schema": {
-                  "$ref": "#/components/schemas/Stream"
+                  "$ref": "#/components/schemas/File"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Stream"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Stream"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
+                  "$ref": "#/components/schemas/File"
                 }
               }
             }
@@ -1518,22 +1426,13 @@
             "description": "Bad Request",
             "content": {
               "text/plain": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "text/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               }
             }
           },
@@ -1541,26 +1440,18 @@
             "description": "Unauthorized",
             "content": {
               "text/plain": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "text/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               }
             }
           }
-        }
+        },
+        "deprecated": true
       }
     },
     "/api/v1/whatif/roleanalysis": {
@@ -1618,22 +1509,13 @@
             "description": "Bad Request",
             "content": {
               "text/plain": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "text/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               }
             }
           },
@@ -1641,35 +1523,36 @@
             "description": "Unauthorized",
             "content": {
               "text/plain": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "text/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               }
             }
           }
         }
       }
     },
-    "/api/v1/whatif/useranalysis/igi/{systemId}/{userId}": {
+    "/api/v1/whatif/customer/{customerId}/erpSystem/{systemId}/user/{userId}/useranalysis": {
       "post": {
         "tags": [
           "Whatif"
         ],
         "summary": "Performs a \"what-if\" analysis for the specified user and the specified entitlements.",
         "parameters": [
+          {
+            "name": "customerId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
           {
             "name": "systemId",
             "in": "path",
@@ -1691,26 +1574,26 @@
           }
         ],
         "requestBody": {
-          "description": "The [IGI] request parameters for the \"what-if\" analysis.",
+          "description": "The request parameters for the \"what-if\" analysis.",
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/IgiWhatIfAnalysisRequest"
+                "$ref": "#/components/schemas/WhatIfAnalysisRequest"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/IgiWhatIfAnalysisRequest"
+                "$ref": "#/components/schemas/WhatIfAnalysisRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/IgiWhatIfAnalysisRequest"
+                "$ref": "#/components/schemas/WhatIfAnalysisRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/IgiWhatIfAnalysisRequest"
+                "$ref": "#/components/schemas/WhatIfAnalysisRequest"
               }
             }
           }
@@ -1721,17 +1604,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/IgiWhatIfAnalysisResponse"
+                  "$ref": "#/components/schemas/WhatIfAnalysisResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IgiWhatIfAnalysisResponse"
+                  "$ref": "#/components/schemas/WhatIfAnalysisResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IgiWhatIfAnalysisResponse"
+                  "$ref": "#/components/schemas/WhatIfAnalysisResponse"
                 }
               }
             }
@@ -1740,22 +1623,13 @@
             "description": "Bad Request",
             "content": {
               "text/plain": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               },
               "text/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": false
-                }
+                "schema": { }
               }
             }
           },
@@ -1763,22 +1637,252 @@
             "description": "Unauthorized",
             "content": {
               "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
+          },
+          "428": {
+            "description": "Client Error",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/whatif/customer/{customerId}/erpSystem/{systemId}/newuser/analysis": {
+      "post": {
+        "tags": [
+          "Whatif"
+        ],
+        "summary": "Responsible for performing a What-If simulated analysis for a new user.",
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "path",
+            "description": "Represents the unique customer identifier to which the new user What-If simulation occurs.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "systemId",
+            "in": "path",
+            "description": "Represents the unique system identifier to which the new user What-If simulation occurs.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Represents the parameters required to perform the simulated analysis.",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhatIfAnalysisRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhatIfAnalysisRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhatIfAnalysisRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WhatIfAnalysisRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "text/plain": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": false
+                  "$ref": "#/components/schemas/ProblemDetails"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": false
+                  "$ref": "#/components/schemas/ProblemDetails"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": false
+                  "$ref": "#/components/schemas/ProblemDetails"
                 }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/whatif/customer/{customerId}/erpSystem/{erpSystemId}/newuseranalysis": {
+      "post": {
+        "tags": [
+          "Whatif"
+        ],
+        "summary": "Performs a new user \"what-if\" analysis for the specified roles.",
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "path",
+            "description": "The customer identifier",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "erpSystemId",
+            "in": "path",
+            "description": "The ERP System identifier",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The request parameters for the new user \"what-if\" analysis.",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewUserWhatIfAnalysisRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewUserWhatIfAnalysisRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewUserWhatIfAnalysisRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewUserWhatIfAnalysisRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
               }
             }
           }
@@ -1789,38 +1893,27 @@
   },
   "components": {
     "schemas": {
-      "EmergencyAccessUserModel": {
+      "Activity": {
         "type": "object",
         "properties": {
-          "id": {
+          "functionName": {
             "type": "string",
-            "format": "uuid"
-          },
-          "email": {
-            "type": "string",
+            "description": "Represents the name of the activity.",
             "nullable": true
           },
-          "firstName": {
+          "functionCode": {
             "type": "string",
+            "description": "Represents the code of the activity.",
             "nullable": true
           },
-          "lastName": {
+          "functionDescription": {
             "type": "string",
+            "description": "Represents the description of the activity.",
             "nullable": true
-          },
-          "fullName": {
-            "type": "string",
-            "nullable": true
-          },
-          "username": {
-            "type": "string",
-            "nullable": true
-          },
-          "isPreApprovedRequester": {
-            "type": "boolean"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Represents an Activity object."
       },
       "DurationModel": {
         "type": "object",
@@ -1918,19 +2011,10 @@
             }
           },
           "defaultDuration": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/DurationModel"
-              }
-            ]
+            "$ref": "#/components/schemas/DurationModel"
           },
           "maxDuration": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/DurationModel"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/DurationModel"
           },
           "enabled": {
             "type": "boolean"
@@ -1942,75 +2026,6 @@
           "createdDate": {
             "type": "string",
             "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ProblemDetails": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "nullable": true
-          },
-          "title": {
-            "type": "string",
-            "nullable": true
-          },
-          "status": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "detail": {
-            "type": "string",
-            "nullable": true
-          },
-          "instance": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": {
-          "type": "object",
-          "additionalProperties": false
-        }
-      },
-      "Stream": {
-        "type": "object",
-        "properties": {
-          "canRead": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "canSeek": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "canTimeout": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "canWrite": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "length": {
-            "type": "integer",
-            "format": "int64",
-            "readOnly": true
-          },
-          "position": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "readTimeout": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "writeTimeout": {
-            "type": "integer",
-            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -2034,8 +2049,7 @@
           },
           "displayId": {
             "type": "string",
-            "nullable": true,
-            "readOnly": true
+            "nullable": true
           },
           "profileId": {
             "type": "string",
@@ -2063,16 +2077,11 @@
             "type": "string"
           },
           "duration": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/DurationModel"
-              }
-            ]
+            "$ref": "#/components/schemas/DurationModel"
           },
           "displayDuration": {
             "type": "string",
-            "nullable": true,
-            "readOnly": true
+            "nullable": true
           },
           "initialState": {
             "enum": [
@@ -2088,17 +2097,31 @@
               "Created",
               "Updated",
               "Retracted",
-              "Error"
+              "Error",
+              "Exception",
+              "Terminated"
             ],
             "type": "string"
           }
         },
         "additionalProperties": false
       },
-      "SapUserDTO": {
+      "EmergencyAccessUserModel": {
         "type": "object",
         "properties": {
-          "userName": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
             "type": "string",
             "nullable": true
           },
@@ -2106,80 +2129,102 @@
             "type": "string",
             "nullable": true
           },
-          "userType": {
+          "username": {
             "type": "string",
             "nullable": true
           },
-          "userGroup": {
-            "type": "string",
-            "nullable": true
+          "isPreApprovedRequester": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
       },
-      "RoleDTO": {
+      "Entitlement": {
         "type": "object",
         "properties": {
-          "roleName": {
+          "name": {
             "type": "string",
+            "description": "Represents the name of the entitlement.",
             "nullable": true
           },
-          "roleDescription": {
+          "functionalityType": {
             "type": "string",
+            "description": "Represents the functionality type of the entitlement. E.g.: \"Role\" or \"Profile\".",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Represents an entitlement object."
       },
-      "MitigatingRuleUserModel": {
+      "Error": {
+        "type": "object",
+        "properties": {
+          "errorCode": {
+            "type": "string",
+            "description": "Represents the error code.",
+            "nullable": true
+          },
+          "errorMessage": {
+            "type": "string",
+            "description": "Represents the error message.",
+            "nullable": true
+          },
+          "referenceId": {
+            "type": "string",
+            "description": "A value representing an id to reference the error in our logs.",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents an error in the \"what-if\" analysis response."
+      },
+      "ExistingUserProvisioningRequest": {
         "required": [
-          "reason",
+          "roleChanges",
           "username"
         ],
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
           "username": {
-            "type": "string"
-          },
-          "reason": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "MitigatingRuleModel": {
-        "required": [
-          "reason"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
             "type": "string",
-            "format": "uuid"
+            "description": "Represents the username of the existing user."
           },
-          "ruleId": {
-            "type": "string",
-            "format": "uuid"
+          "enableManagerApprovals": {
+            "type": "boolean",
+            "description": "Represents a value indicating whether to enable manager approvals."
           },
-          "ruleName": {
-            "type": "string",
-            "nullable": true
+          "accountId": {
+            "type": "integer",
+            "description": "Represents the id of the account under which the provisioning was requested.",
+            "format": "int32"
           },
-          "reason": {
-            "type": "string"
+          "erpSystemId": {
+            "type": "integer",
+            "description": "Represents the id of the ERP system.",
+            "format": "int32"
           },
-          "users": {
+          "roleChanges": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/MitigatingRuleUserModel"
+              "$ref": "#/components/schemas/RoleChange"
             },
+            "description": "Represents a collection of role changes to check for conflicts."
+          },
+          "comment": {
+            "type": "string",
+            "description": "Represents optional comments for request.",
             "nullable": true
+          },
+          "provisionPartialRoles": {
+            "type": "boolean",
+            "description": "Determines if request could be provisioned even if some of its roles have been rejected."
           }
         },
+        "additionalProperties": false,
+        "description": "Represents the model of an existing user provisioning request."
+      },
+      "File": {
+        "type": "object",
         "additionalProperties": false
       },
       "MitigatingControlDetailsModel": {
@@ -2204,35 +2249,10 @@
             "type": "string"
           },
           "type": {
-            "enum": [
-              "Undefined",
-              "ManualPreventative",
-              "AutomaticDetective",
-              "AutomativePreventative",
-              "ManualDetective"
-            ],
             "type": "string"
           },
           "code": {
             "type": "string"
-          },
-          "objective": {
-            "type": "string"
-          },
-          "frequency": {
-            "enum": [
-              "Daily",
-              "Weekly",
-              "Monthly",
-              "Quarterly",
-              "BiAnnual",
-              "Annual",
-              "AdHoc"
-            ],
-            "type": "string"
-          },
-          "requiresTesting": {
-            "type": "boolean"
           },
           "createdBy": {
             "type": "string",
@@ -2271,6 +2291,506 @@
           },
           "description": {
             "type": "string"
+          },
+          "objective": {
+            "type": "string"
+          },
+          "frequency": {
+            "enum": [
+              "Daily",
+              "Weekly",
+              "Monthly",
+              "Quarterly",
+              "BiAnnual",
+              "Annual",
+              "AdHoc"
+            ],
+            "type": "string"
+          },
+          "requiresTesting": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MitigatingRuleModel": {
+        "required": [
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "ruleId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "ruleName": {
+            "type": "string",
+            "nullable": true
+          },
+          "ruleCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "reason": {
+            "type": "string"
+          },
+          "users": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MitigatingRuleUserModel"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MitigatingRuleUserModel": {
+        "required": [
+          "reason",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "username": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModelError": {
+        "type": "object",
+        "properties": {
+          "exception": {
+            "nullable": true
+          },
+          "errorMessage": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModelStateEntry": {
+        "type": "object",
+        "properties": {
+          "rawValue": {
+            "nullable": true
+          },
+          "attemptedValue": {
+            "type": "string",
+            "nullable": true
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModelError"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "validationState": {
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "type": "integer",
+            "format": "int32"
+          },
+          "isContainerNode": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModelStateEntry"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NewUserProvisioningRequest": {
+        "required": [
+          "roleChanges",
+          "userDetails"
+        ],
+        "type": "object",
+        "properties": {
+          "userDetails": {
+            "$ref": "#/components/schemas/SapUserModel"
+          },
+          "accountId": {
+            "type": "integer",
+            "description": "Represents the id of the account under which the provisioning was requested.",
+            "format": "int32"
+          },
+          "erpSystemId": {
+            "type": "integer",
+            "description": "Represents the id of the ERP system.",
+            "format": "int32"
+          },
+          "roleChanges": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RoleChange"
+            },
+            "description": "Represents a collection of role changes to check for conflicts."
+          },
+          "comment": {
+            "type": "string",
+            "description": "Represents optional comments for request.",
+            "nullable": true
+          },
+          "provisionPartialRoles": {
+            "type": "boolean",
+            "description": "Determines if request could be provisioned even if some of its roles have been rejected."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the model for a new user provisioning request."
+      },
+      "NewUserWhatIfAnalysisRequest": {
+        "required": [
+          "systemId"
+        ],
+        "type": "object",
+        "properties": {
+          "rolesToAdd": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Represents the collection of roles to add for the \"whatif\" analysis.",
+            "nullable": true
+          },
+          "rolesToRemove": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Represents the collection of roles to remove for the \"whatif\" analysis.",
+            "nullable": true
+          },
+          "systemId": {
+            "type": "string",
+            "description": "Represents the id of the user system."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the request parameters needed to execute a new user \"whatif\" analysis."
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
+      },
+      "Risk": {
+        "type": "object",
+        "properties": {
+          "riskName": {
+            "type": "string",
+            "description": "Represents the name of the risk.",
+            "nullable": true
+          },
+          "riskCode": {
+            "type": "string",
+            "description": "Represents the code of the risk.",
+            "nullable": true
+          },
+          "riskDescription": {
+            "type": "string",
+            "description": "Represents the description of the risk.",
+            "nullable": true
+          },
+          "riskLevel": {
+            "enum": [
+              "Undefined",
+              "LOW",
+              "MEDIUM",
+              "HIGH"
+            ],
+            "type": "string",
+            "description": "Represents the risk level."
+          },
+          "riskType": {
+            "enum": [
+              "Undefined",
+              "SA",
+              "SoD"
+            ],
+            "type": "string",
+            "description": "Represents the risk type."
+          },
+          "activities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Activity"
+            },
+            "description": "Represents the activities in conflict.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a risk."
+      },
+      "RiskDetailsLookupModel": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the Risk",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the Risk",
+            "nullable": true
+          },
+          "owners": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "A list of names of all users assigned as owners to the risk.",
+            "nullable": true
+          },
+          "rating": {
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "type": "integer",
+            "description": "The severity rating of the risk.",
+            "format": "int32"
+          },
+          "businessFunctions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "A list of business functions associated with the risk",
+            "nullable": true
+          },
+          "approvers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "A list of names of all users assigned as approvers for the risk.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Contains detail information for a given risk."
+      },
+      "RoleChange": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The unique identifier of the role.",
+            "format": "uuid"
+          },
+          "roleName": {
+            "type": "string",
+            "description": "The role name.",
+            "nullable": true
+          },
+          "changeType": {
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer",
+            "description": "The role change type.",
+            "format": "int32"
+          },
+          "validFrom": {
+            "type": "string",
+            "description": "The start date of the validity of the role.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "validTo": {
+            "type": "string",
+            "description": "The end date of the validity of the role.",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the model of a role change."
+      },
+      "RoleDTO": {
+        "type": "object",
+        "properties": {
+          "roleName": {
+            "type": "string",
+            "nullable": true
+          },
+          "roleDescription": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RolesWhatIfAnalysisRequest": {
+        "required": [
+          "systemId"
+        ],
+        "type": "object",
+        "properties": {
+          "rolesToAnalyze": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Represents the collection of roles to be analyzed.",
+            "nullable": true
+          },
+          "systemId": {
+            "type": "string",
+            "description": "Represents the id of the user system."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the roles what-if analysis request."
+      },
+      "RolesWhatIfAnalysisRequestWhatIfAnalysisResponse": {
+        "type": "object",
+        "properties": {
+          "request": {
+            "$ref": "#/components/schemas/RolesWhatIfAnalysisRequest"
+          },
+          "requestTimestampUtc": {
+            "type": "string",
+            "description": "Represents the time at which the request was received.",
+            "format": "date-time"
+          },
+          "extractTimestampUtc": {
+            "type": "string",
+            "description": "Represents the timestamp of the security extract used in the analysis.",
+            "format": "date-time"
+          },
+          "rulebookTimestampUtc": {
+            "type": "string",
+            "description": "Represents the timestamp of the rulebook version used in the analysis.",
+            "format": "date-time"
+          },
+          "ruleViolations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RuleViolation"
+            },
+            "description": "Represents the list of rule violations generated by the request.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "The response object that represents the rule violations, if any, that were\r\nproduced as a result of the \"whatif\" analysis."
+      },
+      "RuleViolation": {
+        "type": "object",
+        "properties": {
+          "ruleName": {
+            "type": "string",
+            "description": "The name of the rule that's been violated.",
+            "nullable": true
+          },
+          "ruleDescription": {
+            "type": "string",
+            "description": "The description of the rule that's been violated.",
+            "nullable": true
+          },
+          "riskLevel": {
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "type": "integer",
+            "description": "The level of risk the rule represents.",
+            "format": "int32"
+          },
+          "riskType": {
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "type": "integer",
+            "description": "The type of risk the rule represents.",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a rule violation."
+      },
+      "SapUserDTO": {
+        "type": "object",
+        "properties": {
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "fullName": {
+            "type": "string",
+            "nullable": true
+          },
+          "userType": {
+            "type": "string",
+            "nullable": true
+          },
+          "userGroup": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -2290,7 +2810,8 @@
           },
           "email": {
             "type": "string",
-            "description": "Represents the user's email address."
+            "description": "Represents the user's email address.",
+            "format": "email"
           },
           "firstName": {
             "type": "string",
@@ -2303,14 +2824,15 @@
           },
           "userType": {
             "enum": [
-              "A",
-              "B",
-              "C",
-              "L",
-              "S"
+              0,
+              1,
+              2,
+              3,
+              4
             ],
-            "type": "string",
-            "description": "Represents the user's SAP user type."
+            "type": "integer",
+            "description": "Represents the user's SAP user type.",
+            "format": "int32"
           },
           "userClass": {
             "type": "string",
@@ -2333,133 +2855,31 @@
         "additionalProperties": false,
         "description": "Represents the model for a SAP user."
       },
-      "RoleChange": {
+      "UserWhatIfAnalysisMetadata": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "description": "The unique identifier of the role.",
-            "format": "uuid"
+          "analysisId": {
+            "type": "integer",
+            "format": "int32"
           },
-          "roleName": {
-            "type": "string",
-            "description": "The role name.",
-            "nullable": true
+          "extractId": {
+            "type": "integer",
+            "format": "int32"
           },
-          "changeType": {
-            "enum": [
-              "Add",
-              "Remove",
-              "Change"
-            ],
-            "type": "string",
-            "description": "The role change type."
+          "rulebookId": {
+            "type": "integer",
+            "format": "int32"
           },
-          "validFrom": {
+          "extractTimestampUtc": {
             "type": "string",
-            "description": "The start date of the validity of the role.",
-            "format": "date-time",
-            "nullable": true
+            "format": "date-time"
           },
-          "validTo": {
+          "rulebookTimestampUtc": {
             "type": "string",
-            "description": "The end date of the validity of the role.",
-            "format": "date-time",
-            "nullable": true
+            "format": "date-time"
           }
         },
-        "additionalProperties": false,
-        "description": "Represents the model of a role change."
-      },
-      "NewUserProvisioningRequest": {
-        "required": [
-          "userDetails"
-        ],
-        "type": "object",
-        "properties": {
-          "userDetails": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/SapUserModel"
-              }
-            ],
-            "description": "Represents the details of the new user."
-          },
-          "accountId": {
-            "type": "integer",
-            "description": "Represents the id of the account under which the provisioning was requested.",
-            "format": "int32"
-          },
-          "erpSystemId": {
-            "type": "integer",
-            "description": "Represents the id of the ERP system.",
-            "format": "int32"
-          },
-          "roleChanges": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RoleChange"
-            },
-            "description": "Represents a collection of role changes to check for conflicts.",
-            "nullable": true
-          },
-          "comment": {
-            "type": "string",
-            "description": "Represents optional comments for request.",
-            "nullable": true
-          },
-          "provisionPartialRoles": {
-            "type": "boolean",
-            "description": "Determines if request could be provisioned even if some of its roles have been rejected."
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents the model for a new user provisioning request."
-      },
-      "ExistingUserProvisioningRequest": {
-        "required": [
-          "username"
-        ],
-        "type": "object",
-        "properties": {
-          "username": {
-            "type": "string",
-            "description": "Represents the username of the existing user."
-          },
-          "enableManagerApprovals": {
-            "type": "boolean",
-            "description": "Represents a value indicating whether to enable manager approvals."
-          },
-          "accountId": {
-            "type": "integer",
-            "description": "Represents the id of the account under which the provisioning was requested.",
-            "format": "int32"
-          },
-          "erpSystemId": {
-            "type": "integer",
-            "description": "Represents the id of the ERP system.",
-            "format": "int32"
-          },
-          "roleChanges": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RoleChange"
-            },
-            "description": "Represents a collection of role changes to check for conflicts.",
-            "nullable": true
-          },
-          "comment": {
-            "type": "string",
-            "description": "Represents optional comments for request.",
-            "nullable": true
-          },
-          "provisionPartialRoles": {
-            "type": "boolean",
-            "description": "Determines if request could be provisioned even if some of its roles have been rejected."
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents the model of an existing user provisioning request."
+        "additionalProperties": false
       },
       "UserWhatIfAnalysisRequest": {
         "required": [
@@ -2496,318 +2916,103 @@
         "additionalProperties": false,
         "description": "Represents the request parameters needed to execute a \"whatif\" analysis."
       },
-      "RolesWhatIfAnalysisRequest": {
-        "required": [
-          "systemId"
-        ],
+      "WhatIfAnalysisRequest": {
         "type": "object",
         "properties": {
-          "rolesToAnalyze": {
+          "entitlementsToAdd": {
             "type": "array",
             "items": {
-              "type": "string"
-            },
-            "description": "Represents the collection of roles to be analyzed.",
-            "nullable": true
-          },
-          "systemId": {
-            "type": "string",
-            "description": "Represents the id of the user system."
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents the roles what-if analysis request."
-      },
-      "RuleViolation": {
-        "type": "object",
-        "properties": {
-          "ruleName": {
-            "type": "string",
-            "description": "The name of the rule that's been violated.",
-            "nullable": true
-          },
-          "ruleDescription": {
-            "type": "string",
-            "description": "The description of the rule that's been violated.",
-            "nullable": true
-          },
-          "riskLevel": {
-            "enum": [
-              "Undefined",
-              "Informational",
-              "Low",
-              "Medium",
-              "High",
-              "Critical"
-            ],
-            "type": "string",
-            "description": "The level of risk the rule represents."
-          },
-          "riskType": {
-            "enum": [
-              "Undefined",
-              "SOD",
-              "SEN",
-              "PRIV"
-            ],
-            "type": "string",
-            "description": "The type of risk the rule represents."
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents a rule violation."
-      },
-      "RolesWhatIfAnalysisRequestWhatIfAnalysisResponse": {
-        "type": "object",
-        "properties": {
-          "request": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/RolesWhatIfAnalysisRequest"
-              }
-            ],
-            "description": "Represents the initial request parameters.",
-            "nullable": true
-          },
-          "requestTimestampUtc": {
-            "type": "string",
-            "description": "Represents the time at which the request was received.",
-            "format": "date-time"
-          },
-          "extractTimestampUtc": {
-            "type": "string",
-            "description": "Represents the timestamp of the security extract used in the analysis.",
-            "format": "date-time"
-          },
-          "rulebookTimestampUtc": {
-            "type": "string",
-            "description": "Represents the timestamp of the rulebook version used in the analysis.",
-            "format": "date-time"
-          },
-          "ruleViolations": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RuleViolation"
-            },
-            "description": "Represents the list of rule violations generated by the request.",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "The response object that represents the rule violations, if any, that were\r\nproduced as a result of the \"whatif\" analysis."
-      },
-      "IgiEntitlement": {
-        "required": [
-          "functionality_type",
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Represents the name of the entitlement."
-          },
-          "application_name": {
-            "type": "string",
-            "nullable": true
-          },
-          "type": {
-            "type": "integer",
-            "description": "Represents the type of the entitlement.",
-            "format": "int32"
-          },
-          "functionality_type": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents an IGI entitlement object."
-      },
-      "IgiWhatIfAnalysisRequest": {
-        "type": "object",
-        "properties": {
-          "listEntitlements2Add": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/IgiEntitlement"
+              "$ref": "#/components/schemas/Entitlement"
             },
             "description": "Represents a collection of entitlements to add.",
             "nullable": true
           },
-          "listEntitlements2Rem": {
+          "entitlementsToRemove": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IgiEntitlement"
+              "$ref": "#/components/schemas/Entitlement"
             },
             "description": "Represents a collection of entitlements to remove.",
             "nullable": true
           }
         },
         "additionalProperties": false,
-        "description": "Represents the IGI \"what-if\" analysis request."
+        "description": "Represents the \"what-if\" analysis request."
       },
-      "IgiRelatedPermission": {
+      "WhatIfAnalysisRequestData": {
         "type": "object",
         "properties": {
-          "name": {
+          "customerId": {
             "type": "string",
-            "description": "Represents the name of the permission.",
-            "nullable": true
-          },
-          "functionality_type": {
-            "enum": [
-              "Undefined",
-              "SapNWGroupProfile",
-              "SapNWProfileProfile",
-              "SAPNWRoleProfile"
-            ],
-            "type": "string",
-            "description": "Represents the available functionality types in IGI."
-          },
-          "application_name": {
-            "type": "string",
-            "nullable": true
-          },
-          "type": {
-            "type": "integer",
-            "description": "Represents the permission type.",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents an IGI permission to be used in a \"what-if\" analysis."
-      },
-      "IgiActivity": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Represents the name of the activity.",
-            "nullable": true
-          },
-          "code": {
-            "type": "string",
-            "description": "Represents the code of the activity.",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "description": "Represents the description of the activity.",
-            "nullable": true
-          },
-          "path": {
-            "type": "integer",
-            "description": "Represents the path of the activity.",
-            "format": "int32"
-          },
-          "riskHier": {
-            "type": "boolean",
-            "description": "Represents whether the activity has a risk hierarchy."
-          },
-          "relatedPermissions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/IgiRelatedPermission"
-            },
-            "description": "Represents a collection of related IGI permissions.",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents an IGI Activity object."
-      },
-      "IgiRisk": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Represents the name of the risk.",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "description": "Represents the description of the risk.",
-            "nullable": true
-          },
-          "risk_level": {
-            "enum": [
-              "Undefined",
-              "LOW",
-              "MEDIUM",
-              "HIGH"
-            ],
-            "type": "string",
-            "description": "Enumeration of available IGI risk levels."
-          },
-          "riskType_name": {
-            "enum": [
-              "Undefined",
-              "SA",
-              "SoD"
-            ],
-            "type": "string",
-            "description": "Enumeration of the available IGI risk types."
-          },
-          "activities": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/IgiActivity"
-            },
-            "description": "Represents the activities in conflict.",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents an IGI risk."
-      },
-      "IgiError": {
-        "type": "object",
-        "properties": {
-          "errorCode": {
-            "type": "string",
-            "description": "Represents the error code.",
-            "nullable": true
-          },
-          "errorMessage": {
-            "type": "string",
-            "description": "Represents the error message.",
-            "nullable": true
-          },
-          "referenceId": {
-            "type": "string",
-            "description": "A value representing an id to reference the error in our logs.",
             "format": "uuid"
+          },
+          "systemId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "userId": {
+            "type": "string",
+            "nullable": true
+          },
+          "entitlementsToAdd": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Entitlement"
+            },
+            "description": "Represents a collection of entitlements to add.",
+            "nullable": true
+          },
+          "entitlementsToRemove": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Entitlement"
+            },
+            "description": "Represents a collection of entitlements to remove.",
+            "nullable": true
           }
         },
-        "additionalProperties": false,
-        "description": "Represents an error in the \"what-if\" analysis response."
+        "additionalProperties": false
       },
-      "IgiWhatIfAnalysisResponse": {
+      "WhatIfAnalysisResponse": {
         "type": "object",
         "properties": {
+          "analysisMetadata": {
+            "$ref": "#/components/schemas/UserWhatIfAnalysisMetadata"
+          },
+          "request": {
+            "$ref": "#/components/schemas/WhatIfAnalysisRequestData"
+          },
           "violations": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/IgiRisk"
+              "$ref": "#/components/schemas/Risk"
             },
-            "description": "Represents a collection of ErpMaestro.Services.PublicApi.WebApi.Models.IGI.IgiRisk objects containing the risk violation details.",
+            "description": "Represents a collection of SailPoint.Arm.Services.PublicApi.WebApi.Models.WhatIfAnalysis.RealTime.Risk objects containing the risk violation details.",
             "nullable": true
           },
           "error": {
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/IgiError"
-              }
-            ],
-            "description": "Represents an error in the \"what-if\" analysis.",
-            "nullable": true
+            "$ref": "#/components/schemas/Error"
           }
         },
         "additionalProperties": false,
         "description": "Represents the \"what-if\" analysis response object."
       }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
+        "scheme": "bearer"
+      }
     }
   },
+  "security": [
+    {
+      "Bearer": [
+        "Bearer"
+      ]
+    }
+  ],
   "tags": [
     {
       "name": "Eam",
